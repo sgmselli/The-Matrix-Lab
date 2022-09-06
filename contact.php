@@ -8,7 +8,7 @@
         $message = $_POST['message'];
 
 
-        $mailTo = 'matrix.lab@outlook.com';
+        $mailTo = 'thematrixlab@outlook.com';
         
         $headers = "From :".$mailFrom;
         
