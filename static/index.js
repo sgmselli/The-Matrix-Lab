@@ -161,7 +161,7 @@ function rbc(row, column, table, calc){
             var td = document.createElement('td')
             var input = document.createElement('input')
 
-            input.setAttribute('size','1');
+            input.setAttribute('size','3');
             input.id = calc+'t'+i+j;
 
             td.appendChild(input);
@@ -184,7 +184,7 @@ function rbc2(row, column, table, calc){
             var td = document.createElement('td')
             var input = document.createElement('input')
 
-            input.setAttribute('size','1');
+            input.setAttribute('size','3');
             input.id = calc+'t2'+i+j;
 
             td.appendChild(input);
