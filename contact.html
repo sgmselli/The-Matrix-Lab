@@ -55,7 +55,7 @@
     <div class="container" id="form">
         <h1>Contact <mark>Us</mark></h1>
         <!--action in contact.php--!>
-        <form method="POST" action="contact.php" class="row g-3">
+        <form method="post" action="contact.php" class="row g-3">
 
             <div class="col-md-8">
                 <label class="form-label" for="name">Full name</label>
@@ -79,7 +79,7 @@
                 <textarea class="form-control" name="message" placeholder="message" rows="3" required></textarea>
             </div>
             <div class="col-md-12" id="buttonForm">
-                <button class="btn btn-primary" type="submit">Send</button>
+                <button class="btn btn-primary" name="submit" type="submit">Send</button>
             </div>
         </form>
     </div>
