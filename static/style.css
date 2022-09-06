@@ -1,0 +1,305 @@
+/*FONTS*/
+@font-face{
+    src: url(fonts/Righteous-Regular.ttf);
+    font-family:Righteous;
+}
+
+@font-face {
+    src: url(fonts/Montserrat-VariableFont_wght.ttf);
+    font-family:Mont;
+}
+
+/*BASE STYLING*/
+*{
+    box-sizing: border-box;
+}
+
+body {
+    overflow-y: scroll; 
+    
+    
+  }
+  
+  body::-webkit-scrollbar {
+    display: none; 
+  }
+
+header{
+    overflow-x: hidden;
+}
+
+
+footer{
+    display: flex;
+    height:70px;
+    background-color: white;
+    text-align: center;
+    font-family: Mont;
+    
+}
+
+footer h4{
+    padding-top:27px;
+    font-size: 13px;
+}
+
+#mainNav{
+    background-color:white;
+    text-align:center;
+    overflow-x: hidden;
+}
+
+#navCalc ul li a{
+    text-align: center;
+}
+
+nav ul li{
+    padding: 0 23.5px;
+    font-family:Mont !important;
+    
+}
+header nav ul li a{
+    color:white!important;
+    
+}
+
+nav ul li a:hover{
+    
+    color:rgb(255, 119, 0) !important;
+}
+
+.navbar-brand{
+    font-family:Mont;
+    letter-spacing: 2px;
+}
+.navbar-brand mark{
+    color:rgb(255, 119, 0) !important;
+    background: none;
+}
+
+#navCalc{
+    min-height:100px !important;
+    height:fit-content;
+    background-color:white;
+}
+#navUl{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+
+
+/*JUMBOTRON*/
+#Multiple-matrix{
+    min-height: calc(100vh - 160px);
+}
+
+.calculator-block{
+    background-color: rgb(246,246,246);
+}
+
+.jumbotron{
+    padding: 25px !important;
+    margin:0 !important;
+    height:80px;
+    display: flex;
+    background-color: white !important;
+}
+
+.jumbotron h4{
+    margin:0;
+    font-size: 16px;
+    font-weight:600;
+    font-family: Mont;
+    align-self: center;
+}
+
+
+/*MATRIX SIZING BUTTONS STYLING*/
+.button-mSize{
+
+    display:flex;
+    flex-wrap: wrap;
+    margin:0 auto;
+    
+}
+
+.button-mSize button{
+    font-size:calc(0.8rem + 0.4vw);
+    margin:5px;
+    display: inline-block;
+    padding: 3px 8px;
+
+}
+
+.operations{
+    text-align: center;
+    margin-top:140px;
+    margin-right:40px;
+}
+.operations button{
+    margin-top:20px;
+}
+label{
+    font-family: Mont;
+    font-weight:500;
+    font-size:16px;
+    padding:0 5px;
+}
+select{
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    padding:5px;
+}
+@media only screen and (max-width:767px){
+
+    .operations{
+        margin-top:0;
+        margin-right:0;
+    }
+}
+
+
+
+
+/*MATRIX STYLING*/
+.calculator{
+    margin:120px auto;
+}
+
+.mtable{
+    margin:35px 0;
+}
+
+.tableBody input{
+    text-align: center;
+    border: none;
+    padding:8px;
+    margin: 2px;
+    font-size: calc(0.5rem + 0.4vw);
+}
+
+
+
+
+/*CALCULATING BUTTONS STYLING*/
+.button-answer{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.button-answer button{
+    font-size:calc(0.8rem + 0.4vw);
+    display: inline-block;
+    padding: 1px 8px;
+    margin:5px;
+    
+}
+
+.matrix-change{
+    border-radius: 4px 0 0 4px !important;
+}
+
+.button-answer input{
+    width:30px;
+    border-radius: 0 4px 4px 0;
+    border: none;
+    text-align: center;
+
+}
+
+
+
+
+/*ANSWER SECTION STYLING*/
+
+
+.answer-block{
+    display:none;
+}
+#result{
+    background-color: green !important;
+    height:30px;
+    display: flex;
+    align-items: center;
+    color: white;   
+    font-family: Mont;
+}
+#det-answer{
+    margin:35px auto;
+}
+.answer-input input{
+    border-radius:4px;
+    border:none;
+    font-family:Mont;
+    font-size: calc(0.5rem + 0.4vw);
+    margin:10px auto;
+    padding:8px
+}
+
+
+@media only screen and (min-width:768px){
+
+    .answer-block{
+        margin:120px 0;
+    }
+    .answer{
+        display:flex;
+        justify-content: center;
+    }
+    
+    #answer-block-mm{
+        margin:0 0 30px 0;
+    }
+    #answer-mm{
+        display:block;
+    }
+}
+
+@media only screen and (max-width:400px){
+    .button-answer button{
+        
+        margin:5px;
+        
+    }
+}
+
+
+
+/************************************************/
+/****************CONTACT FORM********************/
+/************************************************/
+
+.contact-us-section{
+    height:100vh;
+    background-color: rgb(246,246,246);
+}
+#form{
+    
+    padding-top:80px;
+}
+#form h1{
+    font-family: Mont;
+    letter-spacing: 1px;;
+}
+#form mark{
+    color:rgb(255, 119, 0);
+    background:none
+}
+
+form div{
+    margin: 10px 0;
+    background-color: rgb(246,246,246);
+}
+
+#textareaForm{ 
+    margin-bottom: 0 !important;
+}
+
+#buttonForm{ 
+    margin: 0 !important;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+

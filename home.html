@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="A free and easy to use site for matrix calculators. You can solve the determinant, eiganvalues, eiganvectors, inverse of a matrix, transpose a matrix, multiplly, add and subtract matrixes">
+
+  <link rel="stylesheet" href="static/reset.css">
+  <link rel="stylesheet" href="static/style.css">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"
+    integrity="sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+  <title>MatrixLab - Matrix Calculators</title>
+
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5086704841008531"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+<div>
+    <header class="header sticky-top">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+            <a class="navbar-brand" href="home.html">MATRIX<mark>LAB</mark></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbarNav">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse " id="collapsibleNavbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">CONTACT US</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light" id="navCalc">
+        <ul class="navbar-nav mr-auto ml-auto" id="navUl">
+            <li class="nav-item">
+                <a class="nav-link" href="#Multiple-matrix">Multiple matrixes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#determinant">Determinant</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#inverse">Inverse</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#transpose">Transpose</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#eigan-values">Eiganvalues</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#eigan-vectors">Eiganvectors</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<section class="calculator-block" id="Multiple-matrix">
+
+    <div class="jumbotron jumbotron-fluid sticky-top">
+        <h4>Multiple matrix calculator</h4>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="calculator">
+
+                    <div class="button-mSize">
+
+                        <div>
+                            <label for="rows">rows</label>
+                            <select name="rows" id="mmRows1">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3" selected>3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+
+                            </select>
+
+                            <label for="#columns">columns</label>
+                            <select name="columns" id="mmColumns1">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3" selected>3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+
+                            </select>
+                            <button type="button" id="mmSizeButton1" class="btn btn-sm btn-dark">resize</button>
+                        </div>
+
+
+                    </div>
+
+                    <table class="mtable table-responsive">
+                        <tbody class="tableBody" id="table-body-mm1">
+                            <tr>
+                                <td><input id="mm1t00" type="text" size="1"></td>
+                                <td><input id="mm1t01" type="text" size="1"></td>
+                                <td><input id="mm1t02" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="mm1t10" type="text" size="1"></td>
+                                <td><input id="mm1t11" type="text" size="1"></td>
+                                <td><input id="mm1t12" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="mm1t20" type="text" size="1"></td>
+                                <td><input id="mm1t21" type="text" size="1"></td>
+                                <td><input id="mm1t22" type="text" size="1"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <div class="button-answer">
+
+
+                        <button type="button" class="btn btn-dark btn-md matrix-change" id="indicesButton-mm1">Power
+                            of</button>
+                        <input id="power-mm1" type="text" value="2">
+
+                        <button type="button" class="btn btn-dark btn-md matrix-change" id="multipleButton-mm1">Multiple
+                            of</button>
+                        <input id="multiple-mm1" type="text" value="2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="operations">
+                    <ul>
+                        <li>
+                            <button class="btn btn-dark" id="product">AxB</button>
+                        </li>
+                        <li>
+                            <button class="btn btn-dark" id="sum">A+B</button>
+                        </li>
+                        <li>
+                            <button class="btn btn-dark" id="subtracted">A-B</button>
+                        </li>
+                        <li>
+                            <button class="btn btn-dark" id="switch">switch</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="calculator">
+
+                    <div class="button-mSize">
+                        <div>
+                            <label for="rows">rows</label>
+                            <select name="rows" id="mmRows2">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3" selected>3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+
+                            </select>
+
+                            <label for="#columns">columns</label>
+                            <select name="columns" id="mmColumns2">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3" selected>3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+
+                            </select>
+
+                            <button type="button" id="mmSizeButton2" class="btn btn-sm btn-dark">resize</button>
+                        </div>
+                    </div>
+
+                    <table class="mtable table-responsive">
+                        <tbody class="tableBody" id="table-body-mm2">
+                            <tr>
+                                <td><input id="mm2t00" type="text" size="1"></td>
+                                <td><input id="mm2t01" type="text" size="1"></td>
+                                <td><input id="mm2t02" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="mm2t10" type="text" size="1"></td>
+                                <td><input id="mm2t11" type="text" size="1"></td>
+                                <td><input id="mm2t12" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="mm2t20" type="text" size="1"></td>
+                                <td><input id="mm2t21" type="text" size="1"></td>
+                                <td><input id="mm2t22" type="text" size="1"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <div class="button-answer">
+
+
+                        <button type="button" class="btn btn-dark btn-md matrix-change" id="indicesButton-mm2">Power
+                            of</button>
+                        <input id="power-mm2" type="text" value="2">
+
+                        <button type="button" class="btn btn-dark btn-md matrix-change" id="multipleButton-mm2">Multiple
+                            of</button>
+                        <input id="multiple-mm2" type="text" value="2">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="answer-block" id="answer-block-mm">
+                    <div class="result">
+                        <div class="jumbotron" id="result">Result</div>
+                    </div>
+
+                    <div class="answer" id="answer-mm">
+                        <table class="mtable">
+                            <tbody class="tableBody" id="answer-table-mm">
+                                <tr>
+                                    <td><input id="t200" type="text" size="1"></td>
+                                    <td><input id="t201" type="text" size="1"></td>
+                                    <td><input id="t202" type="text" size="1"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="t210" type="text" size="1"></td>
+                                    <td><input id="t211" type="text" size="1"></td>
+                                    <td><input id="t212" type="text" size="1"></td>
+                                </tr>
+                                <tr>
+                                    <td><input id="t220" type="text" size="1"></td>
+                                    <td><input id="t221" type="text" size="1"></td>
+                                    <td><input id="t222" type="text" size="1"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+    </div>
+</section>
+
+<section class="calculator-block" id="determinant">
+
+    <div class="jumbotron jumbotron-fluid sticky-top">
+        <h4>Determinant matrix calculator</h4>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="calculator">
+
+                    <div class="button-mSize">
+                        <button class="btn btn-sm btn-dark" id="oboButtonDet">1x1</button>
+                        <button class="btn btn-sm btn-dark" id="tbtButtonDet">2x2</button>
+                        <button class="btn btn-sm btn-dark" disabled="disabled" id="thbthButtonDet">3x3</button>
+                        <button class="btn btn-sm btn-dark" id="fbfButtonDet">4x4</button>
+                        <button class="btn btn-sm btn-dark" id="fibfiButtonDet">5x5</button>
+                        <button class="btn btn-sm btn-dark" id="sbsButtonDet">6x6</button>
+                        <button class="btn btn-sm btn-dark" id="sebseButtonDet">7x7</button>
+                        <button class="btn btn-sm btn-dark" id="ebeButtonDet">8x8</button>
+                    </div>
+
+                    <table class="mtable table-responsive">
+                        <tbody class="tableBody" id="table-body-det">
+                            <tr>
+                                <td><input id="dett00" type="text" size="1"></td>
+                                <td><input id="dett01" type="text" size="1"></td>
+                                <td><input id="dett02" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="dett10" type="text" size="1"></td>
+                                <td><input id="dett11" type="text" size="1"></td>
+                                <td><input id="dett12" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="dett20" type="text" size="1"></td>
+                                <td><input id="dett21" type="text" size="1"></td>
+                                <td><input id="dett22" type="text" size="1"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <div class="button-answer">
+
+
+                        <button type="button" class="btn btn-dark btn-md matrix-change" id="indicesButton-det">Power
+                            of</button>
+                        <input id="power-det" type="text" value="2">
+
+                        <button type="button" class="btn btn-dark btn-md matrix-change" id="multipleButton-det">Multiple
+                            of</button>
+                        <input id="multiple-det" type="text" value="2">
+
+                        <button type="button" class="btn btn-dark btn-md" id="detButton">Determinant</button>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-6 answer-block" id="answer-block-det">
+                <div class="result">
+                    <div class="jumbotron" id="result">Determinant result</div>
+                </div>
+
+                <div class="answer answer-input">
+                    <input type="text" id="det-answer">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="calculator-block" id="inverse">
+
+    <div class="jumbotron jumbotron-fluid sticky-top">
+        <h4>Inverse matrix calculator</h4>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="calculator">
+
+                    <div class="button-mSize">
+                        <button class="btn btn-sm btn-dark" id="oboButtonInv">1x1</button>
+                        <button class="btn btn-sm btn-dark" id="tbtButtonInv">2x2</button>
+                        <button class="btn btn-sm btn-dark" disabled="disabled" id="thbthButtonInv">3x3</button>
+                        <button class="btn btn-sm btn-dark" id="fbfButtonInv">4x4</button>
+                        <button class="btn btn-sm btn-dark" id="fibfiButtonInv">5x5</button>
+                        <button class="btn btn-sm btn-dark" id="sbsButtonInv">6x6</button>
+                        <button class="btn btn-sm btn-dark" id="sebseButtonInv">7x7</button>
+                        <button class="btn btn-sm btn-dark" id="ebeButtonInv">8x8</button>
+                    </div>
+
+                    <table class="mtable table-responsive">
+                        <tbody class="tableBody" id="table-body-inv">
+                            <tr>
+                                <td><input id="invt00" type="text" size="1"></td>
+                                <td><input id="invt01" type="text" size="1"></td>
+                                <td><input id="invt02" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="invt10" type="text" size="1"></td>
+                                <td><input id="invt11" type="text" size="1"></td>
+                                <td><input id="invt12" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="invt20" type="text" size="1"></td>
+                                <td><input id="invt21" type="text" size="1"></td>
+                                <td><input id="invt22" type="text" size="1"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <div class="button-answer">
+
+
+                        <button type="button" class="btn btn-dark btn-md matrix-change" id="indicesButton-inv">Power
+                            of</button>
+                        <input id="power-inv" type="text" value="2">
+
+                        <button type="button" class="btn btn-dark btn-md matrix-change" id="multipleButton-inv">Multiple
+                            of</button>
+                        <input id="multiple-inv" type="text" value="2">
+
+                        <button type="button" class="btn btn-dark btn-md" id="invButton">Inverse</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="col-md-6 answer-block" id="answer-block-inv">
+                <div class="result">
+                    <div class="jumbotron" id="result">Inverse result</div>
+                </div>
+
+                <div class="answer">
+                    <table class="mtable">
+                        <tbody class="tableBody" id="answer-table-inv">
+                            <tr>
+                                <td><input id="t200" type="text" size="1"></td>
+                                <td><input id="t201" type="text" size="1"></td>
+                                <td><input id="t202" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="t210" type="text" size="1"></td>
+                                <td><input id="t211" type="text" size="1"></td>
+                                <td><input id="t212" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="t220" type="text" size="1"></td>
+                                <td><input id="t221" type="text" size="1"></td>
+                                <td><input id="t222" type="text" size="1"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="calculator-block" id="transpose">
+
+    <div class="jumbotron jumbotron-fluid sticky-top">
+        <h4>Transpose matrix calculator</h4>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="calculator">
+
+                    <div class="button-mSize">
+                        <div>
+                            <label for="rows">rows</label>
+                            <select name="rows" id="tRows">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3" selected>3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+
+                            </select>
+
+                            <label for="#columns">columns</label>
+                            <select name="columns" id="tColumns">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3" selected>3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+
+                            </select>
+
+                            <button type="button" id="tSizeButton" class="btn btn-sm btn-dark">resize</button>
+                        </div>
+                    </div>
+
+                    <table class="mtable table-responsive">
+                        <tbody class="tableBody" id="table-body-t">
+                            <tr>
+                                <td><input id="tt00" type="text" size="1"></td>
+                                <td><input id="tt01" type="text" size="1"></td>
+                                <td><input id="tt02" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="tt10" type="text" size="1"></td>
+                                <td><input id="tt11" type="text" size="1"></td>
+                                <td><input id="tt12" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="tt20" type="text" size="1"></td>
+                                <td><input id="tt21" type="text" size="1"></td>
+                                <td><input id="tt22" type="text" size="1"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="button-answer">
+
+                        <button type="button" class="btn btn-dark btn-md matrix-change" id="indicesButton-t">Power
+                            of</button>
+                        <input id="power-t" type="text" value="2">
+
+                        <button type="button" class="btn btn-dark btn-md matrix-change" id="multipleButton-t">Multiple
+                            of</button>
+                        <input id="multiple-t" type="text" value="2">
+
+                        <button type="button" class="btn btn-dark btn-md" id="tButton">Transpose</button>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-6 answer-block" id="answer-block-t">
+                <div class="result">
+                    <div class="jumbotron" id="result">Transpose result</div>
+                </div>
+
+                <div class="answer">
+                    <table class="mtable">
+                        <tbody class="tableBody" id="answer-table-t">
+                            <tr>
+                                <td><input id="tt200" type="text" size="1"></td>
+                                <td><input id="tt201" type="text" size="1"></td>
+                                <td><input id="tt202" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="tt210" type="text" size="1"></td>
+                                <td><input id="tt211" type="text" size="1"></td>
+                                <td><input id="tt212" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="tt220" type="text" size="1"></td>
+                                <td><input id="tt221" type="text" size="1"></td>
+                                <td><input id="tt222" type="text" size="1"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="calculator-block" id="eigan-values">
+
+    <div class="jumbotron jumbotron-fluid sticky-top">
+        <h4>Eiganvalues calculator</h4>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="calculator">
+
+                    <div class="button-mSize">
+                        <button class="btn btn-sm btn-dark" id="oboButtonEigVal">1x1</button>
+                        <button class="btn btn-sm btn-dark" id="tbtButtonEigVal">2x2</button>
+                        <button class="btn btn-sm btn-dark" disabled="disabled" id="thbthButtonEigVal">3x3</button>
+                        <button class="btn btn-sm btn-dark" id="fbfButtonEigVal">4x4</button>
+                        <button class="btn btn-sm btn-dark" id="fibfiButtonEigVal">5x5</button>
+                        <button class="btn btn-sm btn-dark" id="sbsButtonEigVal">6x6</button>
+                        <button class="btn btn-sm btn-dark" id="sebseButtonEigVal">7x7</button>
+                        <button class="btn btn-sm btn-dark" id="ebeButtonEigVal">8x8</button>
+                    </div>
+
+                    <table class="mtable table-responsive">
+                        <tbody class="tableBody" id="table-body-eigVal">
+                            <tr>
+                                <td><input id="evat00" type="text" size="1"></td>
+                                <td><input id="evat01" type="text" size="1"></td>
+                                <td><input id="evat02" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="evat10" type="text" size="1"></td>
+                                <td><input id="evat11" type="text" size="1"></td>
+                                <td><input id="evat12" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="evat20" type="text" size="1"></td>
+                                <td><input id="evat21" type="text" size="1"></td>
+                                <td><input id="evat22" type="text" size="1"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="button-answer">
+
+                        <button type="button" class="btn btn-dark btn-md matrix-change" id="indicesButton-eigVal">Power
+                            of</button>
+                        <input id="power-eigVal" type="text" value="2">
+
+                        <button type="button" class="btn btn-dark btn-md matrix-change"
+                            id="multipleButton-eigVal">Multiple
+                            of</button>
+                        <input id="multiple-eigVal" type="text" value="2">
+
+                        <button type="button" class="btn btn-dark btn-md" id="eigValButton">Eiganvalues</button>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-6 answer-block" id="answer-block-eigVal">
+                <div class="result">
+                    <div class="jumbotron" id="result">Eiganvalue results</div>
+                </div>
+
+                <div class="answer-input" id="answer-boxes-eigVal">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="calculator-block" id="eigan-vectors">
+
+    <div class="jumbotron jumbotron-fluid sticky-top">
+        <h4>Eiganvectors calculator</h4>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="calculator">
+
+                    <div class="button-mSize">
+                        <button class="btn btn-sm btn-dark" id="oboButtonEigVec">1x1</button>
+                        <button class="btn btn-sm btn-dark" id="tbtButtonEigVec">2x2</button>
+                        <button class="btn btn-sm btn-dark" disabled="disabled" id="thbthButtonEigVec">3x3</button>
+                        <button class="btn btn-sm btn-dark" id="fbfButtonEigVec">4x4</button>
+                        <button class="btn btn-sm btn-dark" id="fibfiButtonEigVec">5x5</button>
+                        <button class="btn btn-sm btn-dark" id="sbsButtonEigVec">6x6</button>
+                        <button class="btn btn-sm btn-dark" id="sebseButtonEigVec">7x7</button>
+                        <button class="btn btn-sm btn-dark" id="ebeButtonEigVec">8x8</button>
+                    </div>
+
+                    <table class="mtable table-responsive">
+                        <tbody class="tableBody" id="table-body-eigVec">
+                            <tr>
+                                <td><input id="evet00" type="text" size="1"></td>
+                                <td><input id="evet01" type="text" size="1"></td>
+                                <td><input id="evet02" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="evet10" type="text" size="1"></td>
+                                <td><input id="evet11" type="text" size="1"></td>
+                                <td><input id="evet12" type="text" size="1"></td>
+                            </tr>
+                            <tr>
+                                <td><input id="evet20" type="text" size="1"></td>
+                                <td><input id="evet21" type="text" size="1"></td>
+                                <td><input id="evet22" type="text" size="1"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="button-answer">
+
+                        <button type="button" class="btn btn-dark btn-md matrix-change" id="indicesButton-eigVec">Power
+                            of</button>
+                        <input id="power-eigVec" type="text" value="2">
+
+                        <button type="button" class="btn btn-dark btn-md matrix-change"
+                            id="multipleButton-eigVec">Multiple
+                            of</button>
+                        <input id="multiple-eigVec" type="text" value="2">
+
+                        <button type="button" class="btn btn-dark btn-md" id="eigVecButton">Eiganvectors</button>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-6 answer-block" id="answer-block-eigVec">
+                <div class="result">
+                    <div class="jumbotron" id="result">Eiganvector results</div>
+                </div>
+
+                <div class="answer-input" id="answer-boxes-eigVec">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <h4>MATRIXLAB  | Matrix Calculators  |  <a href="home.html">Back to top</a></h4>
+</footer>
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script type="module" src="{{ url_for('static', filename='index.js') }}"></script>
+
+</body>
+
+
+</html>
+
